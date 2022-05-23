@@ -16,7 +16,6 @@ public class CustomerConfig {
                     "Ezekiel",
                     "Kibiego",
                     "kibiezekiel@gmail.com",
-                    123456789,
                     1234567890,
                     20000D
             );
@@ -24,7 +23,6 @@ public class CustomerConfig {
                     "Dis",
                     "Nya",
                     "disnya@gmail.com",
-                    987654321,
                     1987654321,
                     50000D
             );

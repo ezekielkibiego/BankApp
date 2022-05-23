@@ -20,7 +20,6 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String email;
-    private Integer ssn;
     private Integer accountNumber;
     private Double accountBalance;
 
@@ -32,14 +31,12 @@ public class Customer {
                     String firstName,
                     String lastName,
                     String email,
-                    Integer ssn,
                     Integer accountNumber,
                     Double accountBalance) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.ssn = ssn;
         this.accountNumber = accountNumber;
         this.accountBalance = accountBalance;
     }
@@ -47,13 +44,11 @@ public class Customer {
     public Customer(String firstName,
                     String lastName,
                     String email,
-                    Integer ssn,
                     Integer accountNumber,
                     Double accountBalance) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.ssn = ssn;
         this.accountNumber = accountNumber;
         this.accountBalance = accountBalance;
     }
@@ -91,13 +86,6 @@ public class Customer {
         this.email = email;
     }
 
-    public Integer getSsn() {
-        return ssn;
-    }
-
-    public void setSsn(Integer ssn) {
-        this.ssn = ssn;
-    }
 
     public Integer getAccountNumber() {
         return accountNumber;
@@ -122,7 +110,6 @@ public class Customer {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-                ", ssn=" + ssn +
                 ", accountNumber=" + accountNumber +
                 ", accountBalance=" + accountBalance +
                 '}';
