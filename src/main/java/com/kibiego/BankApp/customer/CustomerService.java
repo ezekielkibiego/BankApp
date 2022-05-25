@@ -66,7 +66,7 @@ public class CustomerService {
             Optional<Customer> customerOptional = customerRepository
                     .findCustomerByEmail(email);
             if (customerOptional.isPresent()) {
-                throw new IllegalStateException("email take");
+                throw new IllegalStateException("email taken");
             }
             customer.setEmail(email);
         }
