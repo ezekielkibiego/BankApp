@@ -47,7 +47,7 @@ public class Deposit {
         this.bankType = bankType;
         this.accountNumber = accountNumber;
         this.amountToDeposit = amountToDeposit;
-        this.accountBalance = accountBalance;
+        this.accountBalance = accountBalance + amountToDeposit;
         this.depositedOn = depositedOn;
     }
 

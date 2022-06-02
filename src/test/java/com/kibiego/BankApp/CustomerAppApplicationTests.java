@@ -6,7 +6,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.Optional;
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 @SpringBootTest
 class CustomerAppApplicationTests {
@@ -28,6 +31,12 @@ class CustomerAppApplicationTests {
 	}
 
 	private void assertNotNul(Customer customer) {
+	}
+
+	@Test
+	public void testReadAll () {
+		List<Customer> list = customerRepository.findAll();
+		assertThat(list).size().isGreaterThan(0);
 	}
 
 

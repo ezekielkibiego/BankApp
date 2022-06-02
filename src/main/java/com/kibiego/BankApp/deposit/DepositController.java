@@ -35,9 +35,9 @@ public class DepositController {
     public void updateDeposit(
 
             @PathVariable("depositId") Long depositId,
-            @RequestParam(required = false) String email) {
+            @RequestParam(required = false) String email, Double amountToDeposit) {
 
-        depositService.updateDeposit(depositId,email);
+        depositService.updateDeposit(depositId,email,amountToDeposit);
     }
 
 }

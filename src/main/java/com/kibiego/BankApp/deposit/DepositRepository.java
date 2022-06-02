@@ -11,5 +11,7 @@ public interface  DepositRepository  extends JpaRepository<Deposit, Long> {
     Optional<Deposit> findDepositByAccountNumber(Integer accountNumber);
 
     Optional<Deposit> findDepositByEmail(String email);
+
+    Optional<Deposit> findDepositByAmountToDeposit(double amountToDeposit);
 }
 

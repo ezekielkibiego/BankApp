@@ -3,12 +3,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-
-import static java.time.Month.MAY;
 
 @Service
 public class DepositService {
@@ -44,7 +41,7 @@ public class DepositService {
 
     @Transactional
     public void updateDeposit(Long depositId,
-                              String email) {
+                              String email, double amountToDeposit) {
         Deposit deposit = depositRepository.findById(depositId)
                 .orElseThrow(() -> new IllegalStateException(
                         "Account with id " + depositId + " does not exist"
@@ -59,5 +56,13 @@ public class DepositService {
             }
             deposit.setEmail(email);
         }
+        if (amountToDeposit > 0 && !Objects.equals(deposit.getAmountToDeposit(), amountToDeposit)) {
+            Optional<Deposit> depositOptional = depositRepository.findDepositByAmountToDeposit(amountToDeposit);
+            if (depositOptional.isPresent()) {
+                throw new IllegalStateException("Number too small");
+            }
+
+        }
+        deposit.setAmountToDeposit(amountToDeposit);
     }
 }
